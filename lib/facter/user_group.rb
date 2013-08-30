@@ -8,6 +8,6 @@ end
 
 Facter.add("puppet_group") do
   setcode do
-    Etc.getpwuid(Process.gid).name
+    Etc.getgrgid(Process.gid).name
   end
 end

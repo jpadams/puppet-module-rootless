@@ -82,6 +82,13 @@ us pick a tempdir to create things. Var/tmp is preferable to /tmp since /var/tmp
 persists after reboot.
 
 
+###puppet_user
+
+A fact returning the name of the current user
+
+###puppet_group
+
+A fact returning the name of the current group
 
 #Requirements
 
