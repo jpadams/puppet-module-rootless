@@ -40,6 +40,23 @@ base type that can be leveraged to make a more complex behavior.
       tarfile => '/big/nfs/mount/tar.tar.gz'
     }
 
+###rootless::zipdir
+
+A type that will unzip a zipfile that contains a directory. The zipfile must be local
+or nfs mounted and the zip must create a single directory (for purging to work).
+Additionally the folder that is being created must be known ahead of time. This is a
+base type that can be leveraged to make a more complex behavior.
+
+    rootless::zipdir { '/opt/app/place/folder':
+      ensure  => absent,
+      zipfile => '/big/nfs/mount/zipfile.zip'
+    }
+
+    rootless::zipdir { '/opt/app/other_place/folder':
+      ensure  => present,
+      zipfile => '/big/nfs/mount/zipfile.zip'
+    }
+
 ###rootless::jdk
 
 A type that will install a jdk based on major and minor version number from
