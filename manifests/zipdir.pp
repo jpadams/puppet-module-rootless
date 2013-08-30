@@ -44,7 +44,7 @@ define rootless::zipdir (
   if $real_ensure {
 
     exec {"create-zipfolder-${zipdir}":
-      command => "/bin/unzip ${zipfile}",
+      command => "/usr/bin/unzip ${zipfile}",
       cwd     => $zipdir_dirname,
       creates => $zipdir,
     }
