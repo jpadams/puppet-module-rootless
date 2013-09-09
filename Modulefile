@@ -1,5 +1,5 @@
 name 'UTiWorldwide-rootless'
-version '0.1.0'
+version '0.2.0'
 source 'git://github.com/utiworldwide/puppet-module-rootless'
 author 'UTi Worldwide Inc.'
 license 'Apache 2.0'
