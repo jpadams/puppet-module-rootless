@@ -107,6 +107,10 @@ A fact returning the name of the current user
 
 A fact returning the name of the current group
 
+###puppet_user_home
+
+A fact returning the home_directory of the current user
+
 #Requirements
 
 * puppetlabs-stdlib
