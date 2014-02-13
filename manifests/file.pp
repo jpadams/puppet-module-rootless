@@ -18,6 +18,7 @@ define rootless::file(
     command   => "/bin/cat /var/tmp/${tempname} > ${name} && /bin/chmod $mode ${name}",
     subscribe => File["/var/tmp/${tempname}"],
     notify    => $notify,
+    unless    => "/usr/bin/[ `/usr/bin/md5sum /var/tmp/${tempname} | /usr/bin/cut -d ' ' -f 1` = `/usr/bin/md5sum ${name} | /usr/bin/cut -d ' ' -f 1` ]"
   }
 }
 
