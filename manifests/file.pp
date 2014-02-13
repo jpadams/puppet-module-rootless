@@ -1,5 +1,5 @@
-define noroot::file(
-  $mode    = undef,
+define rootless::file(
+  $mode    = '0644',
   $content = '',
   $notify  = undef
 ){
@@ -15,7 +15,7 @@ define noroot::file(
   }
 
   exec { "copy-in-${name}":
-    command   => "cat /var/tmp/${tempname} > ${name}",
+    command   => "/bin/cat /var/tmp/${tempname} > ${name} && /bin/chmod $mode ${name}",
     subscribe => File["/var/tmp/${tempname}"],
     notify    => $notify,
   }
